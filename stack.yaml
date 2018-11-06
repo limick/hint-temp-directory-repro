@@ -1,0 +1,20 @@
+resolver: lts-12.15
+extra-package-dbs: []
+packages:
+- '.'
+extra-deps:
+- heist-1.1.0.1
+- map-syntax-0.3
+- snap-1.1.1.0
+- snap-loader-static-1.0.0.0
+- xmlhtml-0.2.5.2
+- pwstore-fast-2.4.4
+- hint-0.9.0
+- template-haskell-2.12.0.0
+# We fetch a custom snap-loader-dynamic from a GitHub repository. The main difference compared to
+# the official repository is that we filter out a -XHaskell argument to hint that
+# caused a 'Unknown interpreter error'. We also bumped some versions, see:
+# https://github.com/snapframework/snap-loader-dynamic/compare/master...limick:master
+- git: https://github.com/limick/snap-loader-dynamic.git
+  commit: e2bece594859a73c1a89b0ce47a9659b940739e5
+
